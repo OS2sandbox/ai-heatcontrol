@@ -1,49 +1,29 @@
-> [!IMPORTANT] 
-> *Remove this section from your README.md after completing all setup tasks!*
-> - [x] Click the green "Use this template" button above.
-> - [x] Name your new repository and create it.
-> - [ ] Replace all the grey placeholder texts with your project-specific information.
-> - [ ] Add any additional relevant Markdown documents to your documentation.
-> - [ ] Configure a [publishing source for GitHub Pages](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages).
-> - [ ] **Remove this setup section from your README.md.**
->
-> *That's it! You are now set up, and your documentation site is live!*
+# 🏢 AIHeatControl
 
+[![Website](https://img.shields.io/badge/Website-Official-blue)](https://www.os2.eu/os2aiheatcontrol) [![Maintainers](https://img.shields.io/badge/Maintainers-OS2-blue)](MAINTAINERS.md) [![Open Issues](https://img.shields.io/github/issues/OS2sandbox/ai-heatcontrol?logo=github)](https://github.com/OS2sandbox/ai-heatcontrol/issues) [![Status](https://img.shields.io/badge/status-planning-blue)](https://github.com/OS2sandbox/ai-heatcontrol) [![License](https://img.shields.io/badge/license-CC%20BY--SA%204.0-lightgrey)](LICENSE)
 
-# [Replace with Project Title]
-> Replace this subtitle section with a clear statement defining the mission and goals of your project in a few simple terms.
+| 🇩🇰 Fremtidens varmestyring | 🇬🇧 The Future of Heat Control |
+| :--- | :--- |
+| _AIHeatControl kombinerer lokale IoT-data, vejrprognoser og eksisterende CTS-anlæg for at regulere varmen behovsbaseret og automatisk. Målet er lavere energispild, mere stabil rumtemperatur og mindre manuelt arbejde for driftspersonalet._<br><br>**Status:** Projektet er i design- og planlægningsfasen. | _AIHeatControl combines local IoT data, weather forecasts, and existing CTS systems to regulate heating automatically and based on actual need. The goal is to reduce energy waste, stabilize room temperatures, and minimize manual operational work for maintenance staff._ <br><br>**Status:** The project is currently in the design and planning phase. |
 
-[How It Works](#🧭-how-it-works) | [Architecture](#architecture) | [ How to Install and Run](#▶️-how-to-install-and-run)
+<p align="center">
+  <br />
+  <strong>💡 Har du idéer eller har du fundet en fejl?</strong>
+  <br />
+  Vi bygger AIHeatControl i fællesskab, og alle bidrag er velkomne.
+  <br />
+  <a href="https://github.com/OS2sandbox/ai-heatcontrol/issues">
+    <strong>Deltag i samtalen på vores Issue Tracker →</strong>
+  </a>
+</p>
 
-## 🧭 How It Works
-> Replace with a brief, clear explanation of how the codebase works to achieve the stated mission objectives.
+<p align="center">
+  <br />
+  <strong>📚 Vil du vide mere?</strong>
+  <br />
+  <a href="docs/"><strong>Se projektets dokumentation →</strong></a>
+</p>
 
-#### Architecture
-
-> Replace with a Brief introduction to the project's high-level architecture. Link to the architecture documentation with a diagram preferably in mermaid syntax.
-[ARCHITECTURE.MD](./docs/ARCHITECTURE.MD)
-
-#### Key Features
-
-> Replace this with a brief explaination of the main features or functionalities of your project.
-
-## ▶️ How to Install and Run
-> Replace with clear, concise instructions on how to install and run the codebase for development, test and production setups. Link to repositories containing deployment templates that automates deployment
-
-#### Setting up a development enviroment
-> Describe how to get a development enviroment up and running
-
-#### Deploying to production
-> Describe the different deployment methods for the project. Please adhere to the deployment standards recommended by OS2 when describing how to get the project running in production.
-
-#### 
-
-## :star: Examples
-
-> Replace with examples demonstrating key functionality, code-snippets such as command-line usage, API calls or if needed screendumps
+<br>
 
 ---
-
-*This project is licensed under the terms of the [LICENSE.md](LICENSE.md) | For contribution guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md) | Contact: [maintainer usernames]()*
-
-
