@@ -6,7 +6,7 @@ This document provides information about the maintainers of the project, their r
 
 This project is stewarded by **OS2 (Offentligt digitaliseringsfællesskab)**. OS2 provides the governance framework, infrastructure, and organizational support to ensure the project remains open and accessible to the public sector.
 
-**Primary Administrative Contact:** [os2@os2.eu](mailto:os2@os2.eu)
+**Primary Administrative Contact:** [os2aiheatcontrol@os2.eu](mailto:os2aiheatcontrol@os2.eu)
 
 ## Current Maintainers
 
