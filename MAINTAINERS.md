@@ -2,19 +2,29 @@
 
 This document provides information about the maintainers of the project, their roles, and how to engage with them.
 
+## Project Stewardship
+
+This project is stewarded by **OS2 (Offentligt digitaliseringsfællesskab)**. OS2 provides the governance framework, infrastructure, and organizational support to ensure the project remains open and accessible to the public sector.
+
+**Primary Administrative Contact:** [os2@os2.eu](mailto:os2@os2.eu)
+
 ## Current Maintainers
+
+The project is in its **foundational incubation phase**. Technical maintainership is currently being established. During this phase, the project is guided by a steering committee of stakeholders and community management consultants who facilitate the backlog and early requirements.
+
+**Note on Contact:** For project-related queries, technical questions, or suggestions, the preferred method of communication is via [GitHub Issues](https://github.com/OS2sandbox/ai-heatcontrol/issues). This ensures that all discussions are public, transparent, and searchable for the entire community.
 
 | Name            | GitHub Username      | Role/Responsibilities                   | Contact Method          |
 |-----------------|----------------------|-----------------------------------------|-------------------------|
-| [Maintainer 1]  | [@username1](https://github.com/username1) | [Role/Responsibility]                  | [email@example.com]     |
-| [Maintainer 2]  | [@username2](https://github.com/username2) | [Role/Responsibility]                  | [email@example.com]     |
-| [Maintainer 3]  | [@username3](https://github.com/username3) | [Role/Responsibility]                  | [email@example.com]     |
+| Jakob Noerby    | [@JakobNoerby](https://github.com/JakobNoerby) | Project Coordinator & Community Facilitator | GitHub Issues / Profile   |
+| TBD             | TBD                  | Lead Technical Maintainer               | TBD                     |
+
 
 ## Emeritus Maintainers
 
 | Name            | GitHub Username      | Role/Responsibilities                   | Contact Method          |
 |-----------------|----------------------|-----------------------------------------|-------------------------|
-| [Emeritus 1]    | [@emeritus1](https://github.com/emeritus1) | [Previous Role/Responsibility]         | [email@example.com]     |
+| [Emeritus 1]    | [@emeritus1](https://github.com/xxxxx) | [Previous Role/Responsibility]         | [email@example.com]     |
 
 ## Becoming a Maintainer
 
