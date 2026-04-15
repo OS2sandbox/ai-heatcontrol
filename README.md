@@ -1,7 +1,7 @@
 > [!IMPORTANT] 
 > *Remove this section from your README.md after completing all setup tasks!*
-> - [ ] Click the green "Use this template" button above.
-> - [ ] Name your new repository and create it.
+> - [x] Click the green "Use this template" button above.
+> - [x] Name your new repository and create it.
 > - [ ] Replace all the grey placeholder texts with your project-specific information.
 > - [ ] Add any additional relevant Markdown documents to your documentation.
 > - [ ] Configure a [publishing source for GitHub Pages](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages).
