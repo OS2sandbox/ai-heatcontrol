@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: docs-server
+spec:
+  securityContext:
+    seLinuxOptions:
+      type: spc_t
+  containers:
+  - name: hugo
+    image: docker.io/klakegg/hugo:latest
+    command: ["sh", "-c", "cd /docs && hugo server --bind 0.0.0.0 --port 4321"]
+    ports:
+    - containerPort: 4321
+      hostPort: 4321
+    volumeMounts:
+    - name: docs
+      mountPath: /docs
+  volumes:
+  - name: docs
+    hostPath:
+      path: /var/home/jmk/Repos/ai-heatcontrol/docs
+      type: Directory
