@@ -14,5 +14,7 @@
   </div>
   {{ end }}
   <h3>{{ .Get "title" }}</h3>
-  {{ .Inner | markdownify }}
+  <div class="card-content">
+    {{ .Inner | markdownify }}
+  </div>
 </div>
