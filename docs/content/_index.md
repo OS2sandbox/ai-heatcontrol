@@ -2,10 +2,6 @@
 title: Home
 ---
 
-# OS2 AI Heat Control
-
-Prædiktive setpunkter til kommunale varmeanlæg — bygget på en fælles datamodel med åbne ontologier og en referencealgoritme, som markedet kan bygge videre på.
-
 ## Kerneproduktet
 
 OS2 AI Heat Control er en fælles digital infrastruktur, der indsamler og strukturerer data fra CTS-anlæg og IoT-sensorer og anvender dem til prædiktiv varmestyring i kommunale bygninger.
