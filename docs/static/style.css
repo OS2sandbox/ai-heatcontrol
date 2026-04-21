@@ -367,3 +367,154 @@ footer p {
     text-align: center;
   }
 }
+
+/* Cards Grid Layout */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+/* Responsive: single column on mobile */
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Shortcode: Card */
+.card {
+  background: #ffffff;
+  border: 1px solid var(--os2-grey);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 16px 0;
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--os2-surface);
+  color: var(--os2-blue);
+  margin-bottom: 16px;
+}
+
+.card-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.card h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+
+/* Shortcode: Card Expanded (Accordion) - using div + JS toggle */
+.card-expand {
+  background: #ffffff;
+  border: 1px solid var(--os2-grey);
+  border-radius: 12px;
+  margin: 16px 0;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card-expand-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+}
+
+.card-expand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--os2-surface);
+  color: var(--os2-blue);
+  flex-shrink: 0;
+}
+
+.card-expand-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.card-expand-title {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.card-expand-chevron {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.card-expand-chevron::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--muted-foreground);
+  border-bottom: 2px solid var(--muted-foreground);
+  transform: rotate(-45deg);
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s;
+}
+
+.card-expand.expanded .card-expand-chevron::before {
+  transform: rotate(45deg);
+  top: 6px;
+}
+
+.card-expand-summary {
+  font-size: 14px;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 24px 16px 80px;
+}
+
+.card-expand-detail {
+  display: none;
+  padding: 16px 24px 24px;
+  padding-left: 80px;
+  font-size: 14px;
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+
+.card-expand-detail p {
+  margin: 0 0 8px;
+}
+
+.card-expand-detail p:last-child {
+  margin-bottom: 0;
+}
+
+.card-expand.expanded .card-expand-detail {
+  display: block;
+}

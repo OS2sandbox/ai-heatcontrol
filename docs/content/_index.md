@@ -12,79 +12,79 @@ Datamodellen bygger på de åbne ontologier **BrickSchema** og **RealEstateCore*
 
 ## De fire grundelementer
 
-### Datafundamentet
-
+{{< cards >}}
+{{< card title="Datafundamentet" icon="database" >}}
 En fælles datamodel for de minimumsdata, der er nødvendige for intelligent varmestyring.
 
 Data fra CTS-anlæg på anvendersiden er en forudsætning for, at produktet kan fungere. Historiske data, rumtemperatur og vejrdata udgør fundamentet for at kunne arbejde ensartet, sammenligneligt og skalerbart på tværs af kommuner og bygninger.
+{{< /card >}}
 
-### Reguleringsmotoren
+{{< card title="Reguleringsmotoren" icon="cog" >}}
+En fælles referencealgoritme, som sender prædiktive setpunkter til bygningsautomatik.
 
-En fælles referencealgoritme, som sender prædiktive setpunkter til bygningsautomatik for fremløbstemperatur af varmesløjfer (radiator- og gulvvarmeanlæg).
+Reguleringsmotoren anvender målt rumtemperatur, vejrdata, historik og tidsplaner til at beregne optimale setpunkter for fremløbstemperatur og varmekurver. En robust fallback-strategi er en central del af styringslogikken.
+{{< /card >}}
 
-Reguleringsmotoren anvender målt rumtemperatur, vejrdata, historik og tidsplaner til at beregne optimale setpunkter for fremløbstemperatur og varmekurver.
-
-En robust fallback-strategi er en central del af styringslogikken, så bygningerne altid har en sikker driftstilstand.
-
-### Connector-laget
-
-Standardiserede integrationer til CTS- og IoT-systemer samt eksterne datakilder.
+{{< card title="Connector-laget" icon="cable" >}}
+Standardiserede integrationer til CTS- og IoT-systemer.
 
 Connector-laget gør det muligt at koble lokale bygningsinstallationer ind i en fælles ramme og reducerer afhængigheden af proprietære løsninger.
+{{< /card >}}
 
-Connector-specifikationerne fungerer som en åben kontrakt: de definerer præcist, hvilke data der skal leveres, i hvilket format og med hvilken frekvens.
-
-### Implementerbarhed og drift
-
+{{< card title="Implementerbarhed og drift" icon="shield" >}}
 Kommunal driftsegnethed, cybersikkerhed og lave implementeringsomkostninger.
 
 Kerneproduktet skal ikke kun være teknisk velfunderet — det skal også kunne implementeres enkelt, driftes økonomisk og godkendes i kommunal praksis.
-
-Der skal tages stilling til NIS2-compliance, herunder en generel vurdering af, hvad der udgør kritisk infrastruktur i løsningen.
+{{< /card >}}
+{{< /cards >}}
 
 ## Kommerciel værdi for markedet
 
 Kerneproduktet er åbent og skalerbart. Markedet forventes at bygge kommercielle services oven på den fælles platform.
 
-### Connectors & integration
-
+{{< cards >}}
+{{< card title="Connectors & integration" icon="wrench" >}}
 Leverandører af CTS- og IoT-systemer forventes selv at udvikle og vedligeholde connectors efter de åbne connector-specifikationer og det standardiserede API.
+{{< /card >}}
 
-### Installation, drift & support
-
+{{< card title="Installation, drift & support" icon="headset" >}}
 Flere leverandører kan tilbyde lokal installation, løbende drift og support som service oven på det åbne kerneprodukt — en multi-leverandør-model.
+{{< /card >}}
 
-### Avancerede modeller
-
+{{< card title="Avancerede modeller" icon="brain" >}}
 Udvikl specialiserede AI/ML-algoritmer, der bygger videre på referencealgoritmen for prædiktive setpunkter med mere avanceret optimering.
+{{< /card >}}
 
-### Analyse & dashboards
-
+{{< card title="Analyse & dashboards" icon="chart" >}}
 Skab rapportering, benchmarking og visualisering på tværs af bygninger baseret på den fælles datamodel og åbne ontologier.
+{{< /card >}}
+{{< /cards >}}
 
 ## Governance & ansvar
 
 OS2 AI Heat Control styres gennem en fælles governancemodel, hvor ansvar og beslutningskompetence er tydeligt fordelt mellem fire aktører.
 
-### OS2-fællesskabet
-
+{{< cards >}}
+{{< card title="OS2-fællesskabet" icon="users" >}}
 - Ejer kerneproduktet (datamodel, referencealgoritme, connector-specifikationer)
 - Sætter retning via governance-board
+{{< /card >}}
 
-### Kommunerne
-
+{{< card title="Kommunerne" icon="building" >}}
 - Implementerer og drifter løsningen i egne bygninger
 - Bidrager til udvikling med krav, testdata og feedback
+{{< /card >}}
 
-### Leverandører (CTS/IoT & software)
-
+{{< card title="Leverandører (CTS/IoT & software)" icon="wrench" >}}
 - Udvikler connectors til den åbne platform efter OS2's specifikationer
 - Tilbyder kommercielle services
+{{< /card >}}
 
-### Driftsorganisationen
-
+{{< card title="Driftsorganisationen" icon="users" >}}
 - Drifter fælles infrastruktur med hosting ved OS2
 - Sikrer dataportabilitet
+{{< /card >}}
+{{< /cards >}}
 
 ## Datamodellen
 
