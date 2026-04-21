@@ -3,10 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OS2 AI Heat Control — Test</title>
+  <title>OS2 AI Heat Control — Intelligent varmestyring</title>
+  <meta name="description" content="Open source intelligent varmestyring i kommunale bygninger. Fælles datamodel, referencealgoritme og standardiserede integrationer.">
 </head>
 <body>
-  <h1>Hugo is working!</h1>
-  <p>{{ .Title }}</p>
+  <header>
+    <div class="container">
+      <a href="/" class="logo">OS2 AI Heat Control</a>
+      <nav>
+        <ul>
+          <li><a href="#kerneproduktet">Introduktion</a></li>
+          <li><a href="#de-fire-grundelementer">Grundelementer</a></li>
+          <li><a href="#kommerciel-værdi-for-markedet">Markedet</a></li>
+          <li><a href="#governance--ansvar">Governance</a></li>
+          <li><a href="#datamodellen">Datamodel</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {{ .Content }}
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>OS2 AI Heat Control er et fællesoffentligt kerneprodukt under OS2.</p>
+    </div>
+  </footer>
 </body>
 </html>
