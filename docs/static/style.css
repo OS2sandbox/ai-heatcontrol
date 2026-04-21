@@ -71,6 +71,15 @@ header .container {
   color: var(--foreground);
 }
 
+.logo img {
+  height: 28px;
+  width: auto;
+}
+
+.logo-text {
+  font-weight: 600;
+}
+
 /* Navigation */
 nav {
   margin-left: auto;
@@ -138,8 +147,29 @@ main {
 
 .hero .container {
   position: relative;
-  max-width: 800px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 500px;
+  text-align: left;
+}
+
+.hero-illustration {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  width: 520px;
+  flex-shrink: 0;
+}
+
+.hero-illustration svg {
+  width: 520px;
+  height: 260px;
 }
 
 .hero-badge {
@@ -323,5 +353,17 @@ footer p {
   nav a {
     font-size: 12px;
     padding: 6px 8px;
+  }
+
+  .hero-illustration {
+    display: none;
+  }
+
+  .hero .container {
+    text-align: center;
+  }
+
+  .hero-content {
+    text-align: center;
   }
 }
