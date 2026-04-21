@@ -92,6 +92,6 @@ Baseret på [Brick Schema](https://brickschema.org) og [RealEstateCore](https://
 
 OS2-specifikke styringsklasser udvider standarden for kommunal varmestyring. Ved at basere datamodellen på etablerede, åbne ontologier undgår løsningen proprietære dataformater og sikrer, at bygningsdata kan deles, beriges og genbruges på tværs af systemer og leverandører — en fælles 'ordbog' for bygningsdata.
 
-<img src="/datamodel-diagram.svg" alt="Relationsdiagram over datamodellen med RealEstateCore, Brick Schema og OS2 klasser">
+{{< diagram src="/datamodel-diagram.svg" alt="Relationsdiagram over datamodellen med RealEstateCore, Brick Schema og OS2 klasser" >}}
 
 [Brick + REC integration](https://docs.brickschema.org/extra/brick-rec.html)
