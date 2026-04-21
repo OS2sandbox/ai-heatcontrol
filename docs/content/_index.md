@@ -88,16 +88,10 @@ OS2 AI Heat Control styres gennem en fælles governancemodel, hvor ansvar og bes
 
 ## Datamodellen
 
-Baseret på Brick Schema og RealEstateCore — åbne ontologier for bygningsdata.
+Baseret på [Brick Schema](https://brickschema.org) og [RealEstateCore](https://www.realestatecore.io) — åbne ontologier for bygningsdata.
 
-OS2-specifikke styringsklasser udvider standarden for kommunal varmestyring. Ved at basere datamodellen på etablerede, åbne ontologier undgår løsningen proprietære dataformater.
+OS2-specifikke styringsklasser udvider standarden for kommunal varmestyring. Ved at basere datamodellen på etablerede, åbne ontologier undgår løsningen proprietære dataformater og sikrer, at bygningsdata kan deles, beriges og genbruges på tværs af systemer og leverandører — en fælles 'ordbog' for bygningsdata.
 
-### Relationer
+<img src="/datamodel-diagram.svg" alt="Relationsdiagram over datamodellen med RealEstateCore, Brick Schema og OS2 klasser">
 
-| Fra | Til | Relation |
-|-----|-----|----------|
-| Room | Building | locatedIn |
-| Temperature_Sensor | Room | isPointOf |
-| Weather_Station | Building | monitors |
-| Schedule | Building | servesBuilding |
-| Setpoint | Building | servesBuilding |
+[Brick + REC integration](https://docs.brickschema.org/extra/brick-rec.html)
