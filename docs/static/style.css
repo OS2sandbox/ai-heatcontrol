@@ -52,7 +52,7 @@ header {
 .container {
   max-width: 720px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 40px;
   width: 100%;
 }
 
@@ -214,19 +214,19 @@ main {
 
 /* Content sections */
 .content-section {
-  padding: 96px 24px;
+  padding: 120px 40px;
 }
 
 .content-section h2 {
   font-size: 32px;
   font-weight: 500;
-  margin: 96px 0 16px;
+  margin: 120px 0 24px;
   color: var(--foreground);
   letter-spacing: -0.02em;
 }
 
 .content-section h2:first-of-type {
-  margin-top: 0;
+  margin-top: 24px;
 }
 
 .content-section h3 {
