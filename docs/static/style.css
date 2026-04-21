@@ -456,13 +456,6 @@ footer p {
   color: var(--foreground);
 }
 
-.card p {
-  margin: 0;
-  font-size: 14px;
-  color: var(--muted-foreground);
-  line-height: 1.7;
-}
-
 .card-content {
   margin-top: 8px;
   font-size: 14px;
