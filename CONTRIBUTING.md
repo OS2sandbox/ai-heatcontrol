@@ -1,6 +1,6 @@
-# Contributing to OS2 AI Heat Control
+# Contributing to OS2 AI Heat Control Documentation
 
-## Development
+## Writing, editing and testing the documentation page 
 
 ### Prerequisites
 
