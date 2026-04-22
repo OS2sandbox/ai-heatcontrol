@@ -26,6 +26,10 @@ Shortcodes go in `layouts/shortcodes/` and are called with:
 - Content: `{{< card >}}content{{< /card >}}`
 - Inner content processed with: `{{ .Inner | markdownify }}`
 
+### Methodology
+
+When making commits.. always follow the Conventional 
+
 ---
 
 ## Implementation Phases (Completed)
@@ -79,12 +83,15 @@ Shortcodes go in `layouts/shortcodes/` and are called with:
 
 ## Remaining Work
 
-### Phase 9: SVG Diagrams (Future)
+### Phase 9: Header Fixes
+- [ ] Fix logo alignment in navbar
+
+### Phase 10: SVG Diagrams (Future)
 - [ ] ArchitectureDiagram.tsx → static/diagram-architecture.svg  
 - [ ] RelationshipGraph.tsx → static/diagram-relationships.svg
 - [ ] StandardAnalogySection.tsx → static/diagram-analogy.svg
 
-### Phase 10: Animations (Optional)
+### Phase 11: Animations (Optional)
 - [ ] Scroll-reveal effects
 
 ### Phase 11: Expandable Cards (Postponed)
