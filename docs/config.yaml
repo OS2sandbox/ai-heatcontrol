@@ -1,0 +1,4 @@
+baseURL: "/"
+title: "OS2 AI Heat Control"
+contentDir: "content"
+disableKinds: ["taxonomy", "term", "sitemap", "RSS", "robotsTXT"]
