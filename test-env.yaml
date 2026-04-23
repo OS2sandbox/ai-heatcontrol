@@ -9,7 +9,7 @@ spec:
   containers:
   - name: hugo
     image: docker.io/klakegg/hugo:latest
-    command: ["sh", "-c", "cd /docs && hugo server --bind 0.0.0.0 --port 4321"]
+    command: ["sh", "-c", "cd /docs && hugo server --bind 0.0.0.0 --port 4321 --baseURL http://localhost:4321/"]
     ports:
     - containerPort: 4321
       hostPort: 4321
