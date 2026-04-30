@@ -42,7 +42,7 @@ jobs:
         run: hugo --source docs --minify
 
       - name: Upload
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./docs/public
 
