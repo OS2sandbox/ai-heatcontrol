@@ -1,6 +1,6 @@
 📆 _sidst opdateret: {{ site.time | date: '%B %d, %Y' }}_
 
-# Referat :   OS2[produktnavn] [mødefora]møde dd.mm.yyyy
+# Referat :   OS2 AI Heat Control Styregruppemøde dd.mm.yyyy
 
 **Status**
 - [ ] Mødet kalendersat
@@ -13,7 +13,7 @@
 
 ## Mødefakta
   
-**Mødenavn**: OS2[produktnavn] [mødefora]møde  
+**Mødenavn**: OS2 AI Heat Control Stryegruppemøde  
 **Tid**: dd.mm.yyy  kl. Start tid - Slut tid  
 **Sted**: Virtuel / Fysisk 
 
