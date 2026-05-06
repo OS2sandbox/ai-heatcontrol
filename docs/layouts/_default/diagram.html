@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title }} — OS2 AI Heat Control</title>
+  <link rel="stylesheet" href="{{ "style.css" | relURL }}">
+  <style>
+    .content-section.diagram-page {
+      max-width: 100%;
+      padding: 2rem 1rem;
+    }
+    .content-section.diagram-page .container {
+      max-width: 100%;
+    }
+    .mermaid {
+      overflow-x: auto;
+      padding: 1rem;
+      background: #fafafa;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="{{ "/" | relURL }}" class="logo">
+        <img src="{{ "os2-logo.png" | relURL }}" alt="OS2">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="content-section diagram-page">
+      <div class="container">
+        {{ .Content }}
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>OS2 AI Heat Control</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ 
+      startOnLoad: true, 
+      theme: 'default',
+      flowchart: { 
+        useMaxWidth: true,
+        padding: 10,
+        nodeSpacing: 40,
+        rankSpacing: 50,
+        wrappingWidth: 180
+      },
+      fontSize: 14
+    });
+  </script>
+</body>
+</html>
