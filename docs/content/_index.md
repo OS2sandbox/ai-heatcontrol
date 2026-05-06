@@ -12,7 +12,7 @@ Datamodellen bygger på de åbne ontologier **BrickSchema** og **RealEstateCore*
 
 ## De fire grundelementer
 
-{{< cards >}}
+{{< grid columns=2 >}}
 {{< card title="Datafundamentet" icon="database" >}}
 En fælles datamodel for de minimumsdata, der er nødvendige for intelligent varmestyring.
 
@@ -36,13 +36,13 @@ Kommunal driftsegnethed, cybersikkerhed og lave implementeringsomkostninger.
 
 Kerneproduktet skal ikke kun være teknisk velfunderet — det skal også kunne implementeres enkelt, driftes økonomisk og godkendes i kommunal praksis.
 {{< /card >}}
-{{< /cards >}}
+{{< /grid >}}
 
 ## Kommerciel værdi for markedet
 
 Kerneproduktet er åbent og skalerbart. Markedet forventes at bygge kommercielle services oven på den fælles platform.
 
-{{< cards >}}
+{{< grid columns=2 >}}
 {{< card title="Connectors & integration" icon="wrench" >}}
 Leverandører af CTS- og IoT-systemer forventes selv at udvikle og vedligeholde connectors efter de åbne connector-specifikationer og det standardiserede API.
 {{< /card >}}
@@ -58,13 +58,13 @@ Udvikl specialiserede AI/ML-algoritmer, der bygger videre på referencealgoritme
 {{< card title="Analyse & dashboards" icon="chart" >}}
 Skab rapportering, benchmarking og visualisering på tværs af bygninger baseret på den fælles datamodel og åbne ontologier.
 {{< /card >}}
-{{< /cards >}}
+{{< /grid >}}
 
 ## Governance & ansvar
 
 OS2 AI Heat Control styres gennem en fælles governancemodel, hvor ansvar og beslutningskompetence er tydeligt fordelt mellem fire aktører.
 
-{{< cards >}}
+{{< grid columns=2 >}}
 {{< card title="OS2-fællesskabet" icon="users" >}}
 - Ejer kerneproduktet (datamodel, referencealgoritme, connector-specifikationer)
 - Sætter retning via governance-board
@@ -84,7 +84,7 @@ OS2 AI Heat Control styres gennem en fælles governancemodel, hvor ansvar og bes
 - Drifter fælles infrastruktur med hosting ved OS2
 - Sikrer dataportabilitet
 {{< /card >}}
-{{< /cards >}}
+{{< /grid >}}
 
 ## Datamodellen
 

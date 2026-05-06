@@ -8,38 +8,6 @@ layout: diagram
 
 Dette dokument beskriver systemarkitekturen for OS2 AI Heat Control platformen. Systemet bruger en Pipeline Orchestrator til at koordinere dataflows fra forskellige inputkilder gennem deklarative pipelines, med FIWARE (Orion-LD, IoT Agent, Quantum Leap) som central datainfrastruktur.
 
-### Dataflow
-
-{{< cards >}}
-{{< card icon="database" title="Input Kilder" >}}
-LoRaWAN sensorer (indoor temp), CTS-anlæg, Vejrdata API
-{{< /card >}}
-
-{{< card icon="cog" title="API Gateway" >}}
-Envoy Proxy - HTTP endpoints for alle datakilder
-{{< /card >}}
-
-{{< card icon="cable" title="Pipeline Orchestrator" >}}
-WarpStream Bento - deklarative pipelines der transformerer og router data
-{{< /card >}}
-
-{{< card icon="shield" title="Message Queue" >}}
-NATS JetStream - buffering og reliable delivery under høj belastning
-{{< /card >}}
-
-{{< card icon="wrench" title="IoT Agent" >}}
-FIWARE IoT Agent - device management og protokol konvertering
-{{< /card >}}
-
-{{< card icon="headset" title="Context Brooker" >}}
-FIWARE Orion-LD - context broker med entitet historik
-{{< /card >}}
-
-{{< card icon="database" title="Time Series DB" >}}
-TimescaleDB - tidsserie-database via Quantum Leap API
-{{< /card >}}
-{{< /cards >}}
-
 ## Architecture Diagram
 
 ```mermaid
@@ -88,15 +56,47 @@ subgraph FIWARE ["FIWARE Stack"]
 
 ## Hvorfor denne løsning?
 
-Traditionelt skal man bygge sin egen integrationsplatform med databaser, device management, API'er og brugergrænseflader. Det tager tid og kræver vedligeholdelse.
+Istedet for at investere i at bygge og vedligeholde sin egen integrationsplatform med databaser, device management, API'er og brugergrænseflader er denne reference arkitektur løstkoblet og består af genbrug af eksisterende løsninger.
 
-**Her gør vi det anderledes:**
+### Genbrug af Open Source
 
-- **Ingen custom database** - alt lagres i FIWARE (Orion-LD + Quantum Leap/TimescaleDB)
-- **Ingen brugergrænseflade** - alt er konfigurationsfiler
-- **Pipeline Orchestrator** styrer dataflows automatisk
-- **Deklarative YAML pipelines** - kun "hvad" der skal ske, ikke hvordan
-- **NATS håndterer buffering og levering** - stabilitet under høj belastning
+{{< grid columns=3 >}}
+{{< card icon="database" title="Input Kilder" >}}
+LoRaWAN sensorer (indoor temp), CTS-anlæg, Vejrdata API
+{{< /card >}}
+
+{{< card icon="cog" title="API Gateway" >}}
+[Envoy Proxy](https://www.envoyproxy.io/docs) - HTTP endpoints for alle datakilder
+{{< /card >}}
+
+{{< card icon="cable" title="Pipeline Orchestrator" >}}
+[WarpStream Bento](https://warpstreamlabs.github.io/bento/) - deklarative pipelines der transformerer og router data
+{{< /card >}}
+
+{{< card icon="shield" title="Message Queue" >}}
+[NATS JetStream](https://docs.nats.io/nats-concepts/jetstream) - buffering og reliable delivery under høj belastning
+{{< /card >}}
+
+{{< card icon="wrench" title="IoT Agent" >}}
+[FIWARE IoT Agent](https://iotagent-node-lib.readthedocs.io/en/latest/) - device management og protokol konvertering
+{{< /card >}}
+
+{{< card icon="chart" title="Data Visualization" >}}
+[Grafana](https://www.grafana.com/docs/) - dashboards og visualisering af entiteter og tidsseriedata
+{{< /card >}}
+
+{{< card icon="doc" title="Versioned Configs" >}}
+Ingest og Rules pipelines - deklarative konfigurationer versioneret i Git
+{{< /card >}}
+
+{{< card icon="headset" title="Context Brooker" >}}
+[FIWARE Orion-LD](https://fiware-academy.readthedocs.io/en/latest/core/orion-ld.html) - context broker med entitet historik
+{{< /card >}}
+
+{{< card icon="database" title="Timeseries Storage" >}}
+[TimescaleDB](https://docs.timescale.com/) - PostgreSQL tidsserie-database udviddelse tilgængelig via Quantum Leap API
+{{< /card >}}
+{{< /grid >}}
 
 **Resultatet er simpelt:** Du skriver configs der fortæller "hvad" der skal ske - ikke hvordan. Og så virker det.
 

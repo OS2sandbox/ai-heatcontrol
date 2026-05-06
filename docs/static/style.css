@@ -23,6 +23,40 @@ a {
   text-decoration: none;
 }
 
+/* Card links - follow OS2 design */
+.card-content {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+
+/* External links */
+.card-content a.external {
+  color: var(--os2-blue) !important;
+  text-decoration: underline !important;
+  font-weight: 500;
+}
+
+.card-content a.external:hover {
+  color: var(--foreground) !important;
+  text-decoration: none !important;
+}
+
+.card-content a.external:focus {
+  outline: 2px solid var(--os2-blue);
+  outline-offset: 2px;
+}
+
+/* Internal links */
+.card-content a.internal {
+  text-decoration: underline;
+}
+
+.card-content a.internal:hover {
+  text-decoration: none;
+}
+
 /* OS2 Color palette */
 :root {
   --os2-blue: #88B0D8;
@@ -293,7 +327,7 @@ main {
 /* Cards Grid Layout */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(var(--columns), 1fr);
   gap: 16px;
   margin: 24px 0;
 }
@@ -396,6 +430,22 @@ footer p {
   font-size: 14px;
   color: var(--muted-foreground);
   line-height: 1.7;
+}
+
+.card-content a {
+  color: var(--os2-blue, #0066cc);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.card-content a:hover {
+  color: var(--os2-blue-dark, #004499);
+  text-decoration: none;
+}
+
+.card-content a:focus {
+  outline: 2px solid var(--os2-blue, #0066cc);
+  outline-offset: 2px;
 }
 
 .card-content p {
