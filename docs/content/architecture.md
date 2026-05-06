@@ -45,10 +45,10 @@ TimescaleDB - tidsserie-database via Quantum Leap API
 ```mermaid
 flowchart LR
 subgraph FIWARE ["FIWARE Stack"]
-        IOT[IoT Agent]
-        ORION[Orion-LD]
-        QL[Database API]
-        TS[(Timeseries<br/>DB)]
+        IOT@{ shape: subroutine, label: "IoT Agent" }
+        ORION@{ shape: h-cyl, label: "Context Broker" }
+        QL@{ shape: fr-rect, label: "Timeseries API" }
+        TS[(Timeseries<br/>Storage)]
     end
 
     subgraph INPUT ["Input Sources"]
@@ -58,35 +58,32 @@ subgraph FIWARE ["FIWARE Stack"]
         WEATHER[[Vejrdata API<br/>REST API]]
     end
     
-    subgraph pipelines
-    P1[Ingest]
-    P2[Rules]
+    subgraph VCS ["Versioned Configs"]
+    P1@{ shape: doc, label: "Ingest" }
+    P2@{ shape: doc, label: "Rules" }
     end
 
     subgraph PLATFORM["Infrastructure platform"]
-    INGRESS[API Gateway]
-    PIPELINE[Pipeline Orchestrator]
-    NATS[Message Queue]
+    NATS@{ shape: subroutine, label: "Message Queue" }
+    INGRESS@{ shape: hex, label: "API Gateway" }
+    PIPELINE@{ shape: h-cyl, label: "Pipeline Orchestrator" }
+    GRAFANA@{ shape: curv-trap, label: "Grafana" }
     end
     
     
-    subgraph VIZ ["Visualization"]
-        GRAFANA[Grafana]
-    end
-
     ORION --> PIPELINE 
     PIPELINE -..- P1 & P2
-    WEATHER -->|HTTP| INGRESS
-    LORA --> GATEWAY -->|HTTP| INGRESS
+    WEATHER --->|HTTP| INGRESS
+    LORA --> GATEWAY --->|HTTP| INGRESS
     INGRESS --> PIPELINE
-    CTS <-->|GET / POST| INGRESS 
+    CTS <--->|GET / POST| INGRESS 
 
-    PIPELINE --> NATS --> IOT
+    PIPELINE <---> NATS ---------> IOT
     IOT --> ORION
     ORION --> QL
     QL --> TS
     ORION <-..-|GET /entities| GRAFANA
-    TS <-..-|queries| GRAFANA
+    TS <-.-|queries| GRAFANA
 ```
 
 ## Hvorfor denne løsning?
