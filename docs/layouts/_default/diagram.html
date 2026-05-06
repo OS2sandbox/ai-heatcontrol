@@ -4,20 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ .Title }} — OS2 AI Heat Control</title>
-  <link rel="stylesheet" href="{{ "style.css" | relURL }}">
+<link rel="stylesheet" href="{{ "style.css" | relURL }}">
   <style>
+    /* Align with index.html content-section */
     .content-section.diagram-page {
-      max-width: 100%;
-      padding: 2rem 1rem;
+      padding: 120px 40px;
     }
-    .content-section.diagram-page .container {
-      max-width: 100%;
-    }
-    .mermaid {
+/* Mermaid diagram - full width edge to edge with white side borders */
+    .content-section.diagram-page .mermaid {
       overflow-x: auto;
-      padding: 1rem;
+      padding: 24px 200px;
+      margin: 24px -200px;
       background: #fafafa;
-      border-radius: 8px;
+      border-radius: 0;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      box-shadow: 
+        inset 60px 0 0 0 #ffffff,
+        inset -60px 0 0 0 #ffffff;
     }
   </style>
 </head>

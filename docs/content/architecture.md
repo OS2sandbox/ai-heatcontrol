@@ -11,31 +11,42 @@ Dette dokument beskriver systemarkitekturen for OS2 AI Heat Control platformen. 
 ## Architecture Diagram
 
 ```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#C8D5CE", "primaryTextColor": "#3F4A44", "primaryBorderColor": "#AAB1C2", "lineColor": "#8B9BB0", "secondaryColor": "#D7C1E3", "tertiaryColor": "#F2F4F3", "edgeLabelBackground": "#E8EAE9", "edgeLabelText": "#3F4A44"}}}%%
 flowchart LR
-subgraph FIWARE ["FIWARE Stack"]
-        IOT@{ shape: subroutine, label: "IoT Agent" }
-        ORION@{ shape: h-cyl, label: "Context Broker" }
-        QL@{ shape: fr-rect, label: "Timeseries API" }
+    subgraph FIWARE ["FIWARE Stack"]
+        style FIWARE fill:#F2F4F3,stroke:#F2F4F3,stroke-width:2px,color:#64748B
+        IOT{{IoT Agent}}
+        ORION("Context Broker")
+        QL(["Timeseries API"])
         TS[(Timeseries<br/>Storage)]
     end
 
     subgraph INPUT ["Input Sources"]
+        style INPUT fill:#F2F4F3,stroke:#F2F4F3,stroke-width:2px,color:#64748B
         LORA((LoRaWAN<br/>Indoor temp))
         GATEWAY[[LoRaWAN<br/>Gateway]]
         CTS[[CTS-anlæg<br/>REST API]]
         WEATHER[[Vejrdata API<br/>REST API]]
+        style LORA fill:#F5F2ED,color:#3F4A44
+        style GATEWAY fill:#F5F2ED,color:#3F4A44
+        style CTS fill:#F5F2ED,color:#3F4A44
+        style WEATHER fill:#F5F2ED,color:#3F4A44
     end
     
     subgraph VCS ["Versioned Configs"]
-    P1@{ shape: doc, label: "Ingest" }
-    P2@{ shape: doc, label: "Rules" }
+        style VCS fill:#F2F4F3,stroke:#F2F4F3,stroke-width:2px,color:#64748B
+        P1@{ shape: doc, label: "Ingest" }
+        P2@{ shape: doc, label: "Rules" }
+        style P1 fill:#F5F2ED,color:#3F4A44
+        style P2 fill:#F5F2ED,color:#3F4A44
     end
 
-    subgraph PLATFORM["Infrastructure platform"]
-    NATS@{ shape: subroutine, label: "Message Queue" }
-    INGRESS@{ shape: hex, label: "API Gateway" }
-    PIPELINE@{ shape: h-cyl, label: "Pipeline Orchestrator" }
-    GRAFANA@{ shape: curv-trap, label: "Grafana" }
+    subgraph PLATFORM ["Infrastructure platform"]
+        style PLATFORM fill:#F2F4F3,stroke:#F2F4F3,stroke-width:2px,color:#64748B
+        NATS(["Message Queue"])
+        INGRESS{API Gateway}
+        PIPELINE{{Pipeline Orchestrator}}
+        GRAFANA@{ shape: curv-trap, label: "Grafana" }
     end
     
     
@@ -61,10 +72,6 @@ Istedet for at investere i at bygge og vedligeholde sin egen integrationsplatfor
 ### Genbrug af Open Source
 
 {{< grid columns=3 >}}
-{{< card icon="database" title="Input Kilder" >}}
-LoRaWAN sensorer (indoor temp), CTS-anlæg, Vejrdata API
-{{< /card >}}
-
 {{< card icon="cog" title="API Gateway" >}}
 [Envoy Proxy](https://www.envoyproxy.io/docs) - HTTP endpoints for alle datakilder
 {{< /card >}}
@@ -85,16 +92,8 @@ LoRaWAN sensorer (indoor temp), CTS-anlæg, Vejrdata API
 [Grafana](https://www.grafana.com/docs/) - dashboards og visualisering af entiteter og tidsseriedata
 {{< /card >}}
 
-{{< card icon="doc" title="Versioned Configs" >}}
-Ingest og Rules pipelines - deklarative konfigurationer versioneret i Git
-{{< /card >}}
-
-{{< card icon="headset" title="Context Brooker" >}}
-[FIWARE Orion-LD](https://fiware-academy.readthedocs.io/en/latest/core/orion-ld.html) - context broker med entitet historik
-{{< /card >}}
-
-{{< card icon="database" title="Timeseries Storage" >}}
-[TimescaleDB](https://docs.timescale.com/) - PostgreSQL tidsserie-database udviddelse tilgængelig via Quantum Leap API
+{{< card icon="database" title="FIWARE Stack" >}}
+[FIWARE Orion-LD](https://fiware-academy.readthedocs.io/en/latest/core/orion-ld.html) - context broker + [TimescaleDB](https://docs.timescale.com/) for timeseries via Quantum Leap API
 {{< /card >}}
 {{< /grid >}}
 
