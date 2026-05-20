@@ -1,4 +1,6 @@
+{{ $oss := default "Open Source-komponent (standard)" (.Get "oss") }}
+{{ $custom := default "Egenudviklet / brugerdefineret konfiguration" (.Get "custom") }}
 <div class="legend">
-  <span class="legend-item"><span class="legend-box" style="background:#e8f5e9;border:2px solid #2e7d32"></span> Open Source-komponent (standard)</span>
-  <span class="legend-item"><span class="legend-box" style="background:#fff3e0;border:2px solid #e65100"></span> Egenudviklet / brugerdefineret konfiguration</span>
+  <span class="legend-item"><span class="legend-box" style="background:#e8f5e9;border:2px solid #2e7d32"></span> {{ $oss }}</span>
+  <span class="legend-item"><span class="legend-box" style="background:#fff3e0;border:2px solid #e65100"></span> {{ $custom }}</span>
 </div>
