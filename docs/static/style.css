@@ -257,6 +257,15 @@ main {
   padding: 120px 40px;
 }
 
+.content-section h1 {
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin: 0 0 24px;
+  color: var(--foreground);
+  line-height: 1.15;
+}
+
 .content-section h2 {
   font-size: 32px;
   font-weight: 500;
@@ -347,6 +356,31 @@ main {
   box-shadow: 0 4px 16px rgba(136, 176, 216, 0.12);
 }
 
+.card-note {
+  background: #f4f7fa;
+  border-left: 4px solid var(--os2-blue);
+}
+.card-note:hover {
+  box-shadow: none;
+  border-color: var(--os2-grey);
+  border-left-color: var(--os2-blue);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.card-header .card-icon {
+  margin-bottom: 0;
+}
+
+.card-header .card-title {
+  margin: 0;
+}
+
 .card-icon {
   display: flex;
   align-items: center;
@@ -356,7 +390,7 @@ main {
   border-radius: 8px;
   background: var(--os2-surface);
   color: var(--os2-blue);
-  margin-bottom: 16px;
+  flex-shrink: 0;
 }
 
 .card-icon svg {
@@ -387,7 +421,8 @@ footer p {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero h1 {
+  .hero h1,
+  .content-section h1 {
     font-size: 32px;
   }
 
@@ -557,4 +592,29 @@ footer p {
 
 .card-expand.expanded .card-expand-detail {
   display: block;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 16px 0;
+  font-size: 13px;
+  color: var(--muted-foreground);
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legend-box {
+  display: inline-block;
+  width: 32px;
+  height: 22px;
+  border-radius: 5px;
+  flex-shrink: 0;
 }

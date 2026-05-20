@@ -12,20 +12,18 @@
     }
 /* Mermaid diagram - full width edge to edge with white side borders */
     .content-section.diagram-page .mermaid {
+      display: flex;
+      justify-content: center;
       overflow-x: auto;
       padding: 24px 200px;
-      margin: 24px -200px;
-      background: #fafafa;
-      border-radius: 0;
+      margin: 24px calc(-50vw + 50%);
+      background: transparent;
       width: 100vw;
-      position: relative;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
-      box-shadow: 
-        inset 60px 0 0 0 #ffffff,
-        inset -60px 0 0 0 #ffffff;
+      box-sizing: border-box;
+    }
+
+    .content-section.diagram-page .mermaid .edgeLabel {
+      font-size: 11px;
     }
   </style>
 </head>

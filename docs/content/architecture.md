@@ -3,89 +3,135 @@ title: "System Architecture"
 layout: diagram
 ---
 
+# Reference arkitektur
+_Referencearkitekturen beskriver en open source-platform, der opfylder aiheatcontrols behov. Den er visualiseret som en [C4-model](https://c4model.com/) på to niveauer: **systemkontekst** (platformen set udefra) og **containere** (platformens interne komponenter)._
 
-## Overblik
+{{< card type="note" icon="doc" title="Målgruppe" >}}
+Dette referencearkitektur dokument henvender sig til tekniske beslutningstagere, arkitekter og leverandører.
+Diagrammerne anvender engelske fagtermer, da det antages at disse er de genkendelige
+standardbetegnelser på tværs af it-arkitekter og leverandører.
+{{< /card >}}
 
-Dette dokument beskriver systemarkitekturen for OS2 AI Heat Control platformen. Systemet bruger en Pipeline Orchestrator til at koordinere dataflows fra forskellige inputkilder gennem deklarative pipelines, med FIWARE (Orion-LD, IoT Agent, Quantum Leap) som central datainfrastruktur.
 
-## Architecture Diagram
+
+
+## System landskab
+_Et samlet højniveau overblik over platformen, der illustrerer modtagelse af data fra indendørssensorer, CTS-anlæg og vejrdata — og hvordan platformen interagerer med anvendere, udviklere og driftsfolk. For en detaljeret opdeling af de interne komponenter, se **Container Diagram (Level 2)** nedenfor._
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#C8D5CE", "primaryTextColor": "#3F4A44", "primaryBorderColor": "#AAB1C2", "lineColor": "#8B9BB0", "secondaryColor": "#D7C1E3", "tertiaryColor": "#F2F4F3", "edgeLabelBackground": "#E8EAE9", "edgeLabelText": "#3F4A44"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#C8D5CE", "primaryTextColor": "#3F4A44", "primaryBorderColor": "#AAB1C2", "lineColor": "#9DB59D", "secondaryColor": "#D7C1E3", "tertiaryColor": "#F2F4F3", "edgeLabelBackground": "#E8EAE9", "edgeLabelText": "#3F4A44"}, "flowchart": {"htmlLabels": false, "subGraphTitleMargin": {"top": 25, "bottom": 30}, "nodeSpacing": 40, "rankSpacing": 55}}}%%
 flowchart LR
-    subgraph FIWARE ["FIWARE Stack"]
-        style FIWARE fill:#F2F4F3,stroke:#F2F4F3,stroke-width:2px,color:#64748B
-        IOT{{IoT Agent}}
-        ORION("Context Broker")
-        QL(["Timeseries API"])
-        TS[(Timeseries<br/>Storage)]
-    end
+    SENSORS("Indoor Temperature Sensors")
+    CTS("CTS Building System")
+    WEATHER("Weather Data")
+    PLATFORM(["AI Heat Control <br> Platform"])
+    OPERATOR("👤 Building Operator")
+    ENGINEER("👤 Building Engineer")
+    SCIENTIST("👤 Data Scientist")
+    TEAM("👤 Platform Team")
+    REPO@{ shape: docs, label: "Configuration <br> Repository" }
 
-    subgraph INPUT ["Input Sources"]
-        style INPUT fill:#F2F4F3,stroke:#F2F4F3,stroke-width:2px,color:#64748B
-        LORA((LoRaWAN<br/>Indoor temp))
-        GATEWAY[[LoRaWAN<br/>Gateway]]
-        CTS[[CTS-anlæg<br/>REST API]]
-        WEATHER[[Vejrdata API<br/>REST API]]
+    SENSORS -->|readings| PLATFORM
+    CTS <-->|control| PLATFORM
+    WEATHER -->|forecast| PLATFORM
+    PLATFORM -.->|dashboards| OPERATOR
+    ENGINEER --->|commits building model & prediction| REPO
+    SCIENTIST --->|commits prediction model| REPO
+    TEAM -->|maintains CI/CD & repository| REPO
+    TEAM -.->|operates hosting| PLATFORM
+    REPO -.->|CI/CD deploys config| PLATFORM
+
+    style PLATFORM fill:#E4EBE4,stroke:#8DA68D,stroke-width:3px,color:#2D3D2D
+    click PLATFORM "#container-diagram" "Click to expand → see internal containers"
+```
+
+## Løsnings arkitektur {#container-diagram}
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#C8D5CE", "primaryTextColor": "#3F4A44", "primaryBorderColor": "#AAB1C2", "lineColor": "#8B9BB0", "secondaryColor": "#D7C1E3", "tertiaryColor": "#F2F4F3", "edgeLabelBackground": "#E8EAE9", "edgeLabelText": "#3F4A44"}, "flowchart": {"htmlLabels": false, "subGraphTitleMargin": {"top": 12, "bottom": 14}, "nodeSpacing": 40, "rankSpacing": 40}}}%%
+flowchart TB
+    classDef oss fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
+    classDef custom fill:#fff3e0,stroke:#e65100,color:#bf360c
+    subgraph INPUT["Input Sources"]
+        style INPUT fill:#F5F7F6,stroke:#D5D9E0,stroke-width:1px,color:#3F4A44
+        LORA("Indoor Temperature Sensors")
+        GATEWAY["Sensor Gateway"]
+        CTS["CTS Building System"]
+        WEATHER["Weather Data"]
         style LORA fill:#F5F2ED,color:#3F4A44
         style GATEWAY fill:#F5F2ED,color:#3F4A44
         style CTS fill:#F5F2ED,color:#3F4A44
         style WEATHER fill:#F5F2ED,color:#3F4A44
     end
-    
-    subgraph VCS ["Versioned Configs"]
-        style VCS fill:#F2F4F3,stroke:#F2F4F3,stroke-width:2px,color:#64748B
-        P1@{ shape: doc, label: "Ingest" }
-        P2@{ shape: doc, label: "Rules" }
-        style P1 fill:#F5F2ED,color:#3F4A44
-        style P2 fill:#F5F2ED,color:#3F4A44
-    end
 
-    subgraph PLATFORM ["Infrastructure platform"]
-        style PLATFORM fill:#F2F4F3,stroke:#F2F4F3,stroke-width:2px,color:#64748B
-        NATS(["Message Queue"])
-        INGRESS{API Gateway}
+    GW{{"API Gateway"}}
+
+    subgraph ORCH["Orchestration"]
+        style ORCH fill:#F5F7F6,stroke:#D5D9E0,stroke-width:1px,color:#3F4A44
         PIPELINE{{Pipeline Orchestrator}}
-        GRAFANA@{ shape: curv-trap, label: "Grafana" }
+        CONFIG@{shape: doc, label: "Configuration"}
     end
-    
-    
-    ORION --> PIPELINE 
-    PIPELINE -..- P1 & P2
-    WEATHER --->|HTTP| INGRESS
-    LORA --> GATEWAY --->|HTTP| INGRESS
-    INGRESS --> PIPELINE
-    CTS <--->|GET / POST| INGRESS 
 
-    PIPELINE <---> NATS ---------> IOT
-    IOT --> ORION
-    ORION --> QL
-    QL --> TS
-    ORION <-..-|GET /entities| GRAFANA
-    TS <-.-|queries| GRAFANA
+    subgraph FWARE["IoT Context Platform"]
+        style FWARE fill:#F5F7F6,stroke:#D5D9E0,stroke-width:1px,color:#3F4A44
+        IOT{{IoT Agent}}
+        BROKER[("Context Broker<br/>+ Historical Storage")]
+    end
+
+    subgraph SEMANTIC["Semantic Model"]
+        style SEMANTIC fill:#F5F7F6,stroke:#D5D9E0,stroke-width:1px,color:#3F4A44
+        SPARQL[("Knowledge Graph")]
+    end
+
+    subgraph PREDICT["Prediction Engine"]
+        style PREDICT fill:#F5F7F6,stroke:#D5D9E0,stroke-width:1px,color:#3F4A44
+        PREDICT_API{{"Predict API"}}
+    end
+
+    NATS(["Message Queue"])
+
+    GRAFANA@{shape: curv-trap, label: "Data Visualization"}
+
+    LORA ---> GATEWAY
+    GATEWAY --->|HTTP| GW
+    CTS --->|HTTP| GW
+    WEATHER --->|HTTP| GW
+    GW --> PIPELINE
+    PIPELINE -..- CONFIG
+    PIPELINE -->|predict| PREDICT_API
+    PREDICT_API -->|semantic| SPARQL
+    PREDICT_API -->|context| BROKER
+    PREDICT_API -->|setpoints| NATS
+    PIPELINE <--->|events| NATS
+    NATS ---> IOT
+    IOT --> BROKER
+    BROKER -->|state| PIPELINE
+    BROKER <-..-|queries| GRAFANA
+
+    class GW,PIPELINE,IOT,BROKER,NATS,GRAFANA oss
+    class CONFIG,SPARQL,PREDICT_API custom
 ```
 
-## Hvorfor denne løsning?
+{{< legend >}}
 
-Istedet for at investere i at bygge og vedligeholde sin egen integrationsplatform med databaser, device management, API'er og brugergrænseflader er denne reference arkitektur løstkoblet og består af genbrug af eksisterende løsninger.
+## Genbrug af komponenter
+_I stedet for at investere i at bygge og vedligeholde sin egen integrationsplatform med databaser, enhedsstyring, API'er og brugergrænseflader – og dermed genopfinde funktionalitet, der allerede findes – er denne referencearkitektur løst koblet og baseret på genbrug af eksisterende Open Source løsninger._
 
-### Genbrug af Open Source
-
-{{< grid columns=3 >}}
+{{< grid columns=2 >}}
 {{< card icon="cog" title="API Gateway" >}}
 [Envoy Proxy](https://www.envoyproxy.io/docs) - HTTP endpoints for alle datakilder
 {{< /card >}}
 
 {{< card icon="cable" title="Pipeline Orchestrator" >}}
-[WarpStream Bento](https://warpstreamlabs.github.io/bento/) - deklarative pipelines der transformerer og router data
+[WarpStream Bento](https://warpstreamlabs.github.io/bento/) – deklarative pipelines i et klart og menneskelæsbart format, der transformerer og videresender data
 {{< /card >}}
 
 {{< card icon="shield" title="Message Queue" >}}
-[NATS JetStream](https://docs.nats.io/nats-concepts/jetstream) - buffering og reliable delivery under høj belastning
+[NATS JetStream](https://docs.nats.io/nats-concepts/jetstream) – løskobling af datakilder og datamodtagere for at sikre pålidelige dataleverancer under høj belastning
 {{< /card >}}
 
 {{< card icon="wrench" title="IoT Agent" >}}
-[FIWARE IoT Agent](https://iotagent-node-lib.readthedocs.io/en/latest/) - device management og protokol konvertering
+[FIWARE IoT Agent](https://iotagent-node-lib.readthedocs.io/en/latest/) – bro mellem IoT-enheders protokoller og FIWARE Context Broker
 {{< /card >}}
 
 {{< card icon="chart" title="Data Visualization" >}}
@@ -93,9 +139,6 @@ Istedet for at investere i at bygge og vedligeholde sin egen integrationsplatfor
 {{< /card >}}
 
 {{< card icon="database" title="FIWARE Stack" >}}
-[FIWARE Orion-LD](https://fiware-academy.readthedocs.io/en/latest/core/orion-ld.html) - context broker + [TimescaleDB](https://docs.timescale.com/) for timeseries via Quantum Leap API
+[FIWARE Orion-LD](https://fiware-academy.readthedocs.io/en/latest/core/orion-ld.html) og [TimescaleDB](https://docs.timescale.com/) – underliggende, iot-datamodel, der samler realtidsdata og historik og kan kobles sammen med domænespecifikke bygnings-datamodeller.
 {{< /card >}}
 {{< /grid >}}
-
-**Resultatet er simpelt:** Du skriver configs der fortæller "hvad" der skal ske - ikke hvordan. Og så virker det.
-
