@@ -6,7 +6,7 @@
 - [x] Mødet kalendersat
 - [x] Dagsorden udarbejdet
 - [x] Referat påbegyndt
-- [ ] Referat sendt til godkendelse
+- [x] Referat sendt til godkendelse
 - [ ] Referat godkendt
 - [ ] Referat publiceret  
 
@@ -18,23 +18,23 @@
 **Sted**: Ikast-Brande Kommune
 
 #### Deltagere:
-- [] Mikkel Groot Andersen, Silkeborg Kommune, IT
-- [] Martin Hansen, Kolding Kommune
-- [] Jakob Hovgaard Kaiser, Aarhus Kommune
-- [] Anders Aschlund Bach Burkahl, Ikast-Brande Kommune
-- [] Villads Laraignou Mønsted, Gladsaxe Kommune (deltog på Teams)
-- [] Jesper Buchhardt, Silkeborg Kommune, EJD
-- [] Jan Maack Kjerbye, OS2-sekretariatet
-- [] Jakob Thøtt Nørby, 4BC
+- [x] Mikkel Groot Andersen, Silkeborg Kommune, IT
+- [x] Martin Hansen, Kolding Kommune
+- [x] Jakob Hovgaard Kaiser, Aarhus Kommune
+- [x] Anders Aschlund Bach Burkahl, Ikast-Brande Kommune
+- [x] Villads Laraignou Mønsted, Gladsaxe Kommune (deltog på Teams)
+- [x] Jesper Buchhardt, Silkeborg Kommune, EJD
+- [x] Jan Maack Kjerbye, OS2-sekretariatet
+- [x] Jakob Thøtt Nørby, 4BC
 
 #### Afbud:
 - [] Anna-Lis Berg, OS2-sekretariatet
 
 #### Faciliteret af xxxxxxx:
-- [] Jakob Thøtt Nørby, 4BC
+- [x] Jakob Thøtt Nørby, 4BC
   
 #### Observers/ Gæster
-- [ ] 
+- [] 
 
 ## Møde Indhold
 
@@ -74,28 +74,28 @@ Mødet vil have fokus på at beslutte **[Reference arkitektur](https://github.co
 ### AD 2: Opfølgning
  - [ ] **Status på igangværende aktiviteter**  
     1. Brug af GitHub som arbejdsplatform
-      a) Generelt er det rigtig godt at komme på GitHub med projektet. Projektdeltagerne er alle kommet på. 
+      a) Generelt er det rigtig godt at komme på GitHub med projektet. Alle projektdeltagerne er kommet på. 
     2. Actions fra PM (https://github.com/OS2sandbox/ai-heatcontrol/issues?q=state%3Aopen%20label%3APM)
-    3. Procesplan
+      a) Alle PM-issues blev gennemgået. Kommentarer og ændringer fremgår af det enkelte issue.
+    4. Procesplan
       a) Procesplan følges generelt, men er p.t. lidt bagefter tidsplanen for definition af referencearkitektur og markedsdialog. Det er prioriteret at lægge mere tid i arbejdet med referencearkitekturen grundet vigtigheden af at komme rigtigt i gang.
-    4. Opfølgning på budget og ressourcer
-      a) Der oprettes issue til opfølgning på budget. Budgetopfølgning blev godkendt med en kommentar om, at budgettet nok er for lidt ift. udbud og markedsdialog.
+    5. Opfølgning på budget og ressourcer
+      a) Der oprettes et nyt issue til opfølgning på budget. Budgetopfølgning blev godkendt med en kommentar om, at budgettet nok er for lidt ift. udbud og markedsdialog.
 
 ### AD 3: Tema 1: **[Reference arkitektur](https://github.com/OS2sandbox/ai-heatcontrol/blob/34-reusable-architecture-proposal/docs/content/architecture.md)**  
 Jan gennemgik oplæg til referencearkitektur med fokus på skalérbarhed og robusthed. 
 
 Der var diskussioner om følgende elementer:
 - Datamodel og versionering; hvem har ansvar for, at dataleverance i ønsket ontologi? Kunne det være en hybridmodel, hvor nogle leverandører har eget ejerskab over datamodellen, mens andre leverandører leverer rådata og OS2AIHC laver og vedligeholder "oversætteren"? Der oprettes et issue til fælles diskussion af setup, og ende med en risikovurdering
-- OS2IoT er pt baseret på push, men burde måske være pull-baseret request for, at OS2AIHC er i bedre kontrol over dataleverance. Beslutningen ligger hos OS2IoT-styregruppen. Issue (feature-request) oprettes. Datakilde fra OS2IoT. Der skal etableres en dialog med OS2IoT
-- 
+- OS2IoT er pt baseret på push, men burde måske være pull-baseret request for, at OS2AIHC er i bedre kontrol over dataleverance. Beslutningen ligger hos OS2IoT-styregruppen. Issue (feature-request) oprettes. Datakilde fra OS2IoT. Der skal etableres en dialog med OS2IoT.
 
 ### AD 4: Tema 2: **Markedsdialog**
-Udsættes til et kommende projektmøde på Teams.
+Udsættes til et kommende projektmøde på Teams. Møde er programsat til den 16/6 kl. 11.00
 
 ### AD 5: Tema 3: **Godkendelse af beslutningslogs, [SDR-001](https://github.com/OS2sandbox/ai-heatcontrol/issues/36) og [ADR-001](https://github.com/OS2sandbox/ai-heatcontrol/issues/37)**
-Udsættes til et kommende projektmøde på Teams.
+Udsættes til et kommende projektmøde på Teams. Møde er programsat til den 16/6 kl. 11.00
 
 ### AD 6: Evt. & næste møde 
-Der indkaldes til nyt møde
+Der indkaldes til nyt møde.
  
   ---
