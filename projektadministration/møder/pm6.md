@@ -30,7 +30,7 @@
 #### Afbud:
 - [] Anna-Lis Berg, OS2-sekretariatet
 
-#### Faciliteret af xxxxxxx:
+#### Faciliteret af:
 - [x] Jakob Thøtt Nørby, 4BC
   
 #### Observers/ Gæster
