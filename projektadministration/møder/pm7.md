@@ -43,7 +43,7 @@
 Formålet med mødet var at følge op på seneste projektmøde, gennemgå den aktuelle handlingslog (https://github.com/OS2sandbox/ai-heatcontrol/issues) med særligt fokus på de punkter der ikke blev nået på sidste møde omhandlende **Plan for Markedsdialog** og **Godkendelse af beslutningslogs**.
 
 ### Baggrundsmateriale ((fx præsentation, styringsredskaber, mm)
--
+- Plan for 
 
 ### Dagsorden
 1. Formalia     
@@ -63,8 +63,8 @@ Formålet med mødet var at følge op på seneste projektmøde, gennemgå den ak
 ## Møde referat
 
 ### AD 1: Formalia
-   - [ ] Mødeleder og referent udpeget
-   - [ ] Referat godkendt
+   - [x] Mødeleder og referent udpeget
+   - [ ] Referat godkendt fra seneste projektmøde
 
 ### AD 2: Opfølgning
  - [ ] **Status på igangværende aktiviteter**  
