@@ -43,7 +43,7 @@
 Formålet med mødet var at følge op på seneste projektmøde, gennemgå den aktuelle handlingslog (https://github.com/OS2sandbox/ai-heatcontrol/issues) med særligt fokus på de punkter der ikke blev nået på sidste møde omhandlende **Plan for Markedsdialog** og **Godkendelse af beslutningslogs**.
 
 ### Baggrundsmateriale ((fx præsentation, styringsredskaber, mm)
--
+-https://github.com/OS2sandbox/ai-heatcontrol/blob/markedsdialog/projektadministration/docs/planformarkedsdialog.md
 
 ### Dagsorden
 1. Formalia     
@@ -72,6 +72,7 @@ Formålet med mødet var at følge op på seneste projektmøde, gennemgå den ak
       a) 
 
 ### AD 3: Tema 1: **Plan for markedsdialog**
+https://github.com/OS2sandbox/ai-heatcontrol/blob/markedsdialog/projektadministration/docs/planformarkedsdialog.md
 
 ### AD 4: Tema 2: **Godkendelse af beslutningslogs, [SDR-001](https://github.com/OS2sandbox/ai-heatcontrol/issues/36) og [ADR-001](https://github.com/OS2sandbox/ai-heatcontrol/issues/37)**
 
