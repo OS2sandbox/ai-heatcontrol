@@ -75,10 +75,15 @@ Formålet med mødet er at afklare projektets videre rammer med fokus på fremti
       a) 
 
 ### AD 3: Tema 1: **Fremtidig organisering**
+- Styregruppe / Koordinationsgruppe; roller og ansvar
+- Maintainer til Github
 
 ### AD 4: Tema 2: **Opfølgning på budget**
+- OPdateret med seneste viden om vedligeholdelse mm
 
 ### AD 5: Tema 3: **Udbudsproces**
+- Status på interne konsulenter
+- Behov for ekstern specialistbistand (tilbud indhentet) 
 
 ### AD 6: Evt. & næste møde 
 
