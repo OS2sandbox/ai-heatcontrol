@@ -4,7 +4,7 @@
 
 **Status**
 - [x] Mødet kalendersat
-- [ ] Dagsorden udarbejdet
+- [x] Dagsorden udarbejdet
 - [ ] Referat påbegyndt
 - [ ] Referat sendt til godkendelse
 - [ ] Referat godkendt
@@ -51,6 +51,7 @@ Formålet med mødet er at afklare projektets videre rammer med fokus på fremti
 1. Formalia     
    1. Verifikation af deltagere, mødeleder og referent
    2. Godkendelse af referat fra tidligere møde og dagsorden
+   3. Selvevaluering (https://github.com/OS2sandbox/ai-heatcontrol/blob/Selvevaluering/projektadministration/evalueringer/2026-08-14%20Selvevaluering.md). Sendes til OS2 Bestyrelsen
 2. Opfølgning:
    1. Status på igangværende aktiviteter (se [Issues]([https://github.com/OS2sandbox/ai-heatcontrol/issues](https://github.com/OS2sandbox/ai-heatcontrol/issues?q=state%3Aopen%20label%3APM)))
 3. Tema 1: Fremtidig organisering
@@ -75,17 +76,18 @@ Formålet med mødet er at afklare projektets videre rammer med fokus på fremti
       a) 
 
 ### AD 3: Tema 1: **Fremtidig organisering**
-- Styregruppe / Koordinationsgruppe; roller og ansvar
-- Maintainer til Github
+- Styregruppe / Koordinationsgruppe; roller og ansvar (https://github.com/OS2sandbox/ai-heatcontrol/issues/50) (https://www.os2.eu/kommissorium)
+- Maintainer til Github 
 
 ### AD 4: Tema 2: **Opfølgning på budget**
-- OPdateret med seneste viden om vedligeholdelse mm
+- Opdateret med seneste viden om vedligeholdelse mm
 
 ### AD 5: Tema 3: **Udbudsproces**
 - Status på interne konsulenter
-- Behov for ekstern specialistbistand (tilbud indhentet) 
+- Behov for ekstern specialistbistand (tilbud indhentet)
+- Fælles indkøb af LoraWan sensorer (https://github.com/OS2sandbox/ai-heatcontrol/issues/26)
 
 ### AD 6: Evt. & næste møde 
-
+- Forslag den 9/9-26 (evt. opdeling i styregruppe og koordinationsgruppe)
  
   ---
