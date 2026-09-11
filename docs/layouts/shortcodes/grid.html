@@ -1,0 +1,4 @@
+{{ $columns := default 2 (.Get "columns") }}
+<div class="cards-grid" style="--columns: {{ $columns }}">
+  {{ .Inner }}
+</div>
