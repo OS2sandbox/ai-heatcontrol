@@ -7,8 +7,8 @@
 - [x] Dagsorden udarbejdet
 - [x] Referat påbegyndt
 - [x] Referat sendt til godkendelse
-- [ ] Referat godkendt
-- [ ] Referat publiceret  
+- [x] Referat godkendt
+- [x] Referat publiceret  
 
 
 ## Mødefakta
