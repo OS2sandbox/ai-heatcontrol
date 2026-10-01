@@ -46,7 +46,7 @@ Mødet har særligt fokus på udbudsproces, Gitforvalter-rollen, risikolog og n�
 
 ### Mødepræsentation og baggrundsmateriale
 - [GitHub Issues med PM-label](https://github.com/OS2sandbox/ai-heatcontrol/issues?q=state%3Aopen%20label%3APM)
-- [Risikolog](https://github.com/OS2sandbox/ai-heatcontrol/blob/JakobNoerby-patch-23/projektadministration/risici/risikolog.md)
+- [Risikolog](https://github.com/OS2sandbox/ai-heatcontrol/blob/pm9/projektadministration/risici/risikolog.md)
 - [Referat fra PM8](https://github.com/OS2sandbox/ai-heatcontrol/blob/JakobNoerby-patch-23/projektadministration/m%C3%B8der/pm8.md)
 - Tilbud på Gitforvalter-rollen: Uploadet til lukket område på [boks.os2.eu](https://boks.os2.eu/apps/files/files/392768?dir=/aiheatcontrol%20%28lukket%20mappe%29/Leverand%C3%B8rer&editing=false&openfile=true)
 
@@ -65,7 +65,7 @@ Mødet har særligt fokus på udbudsproces, Gitforvalter-rollen, risikolog og n�
 
 - [Link til strategisk beslutningslog](https://github.com/OS2sandbox/ai-heatcontrol/issues?q=is%3Aopen%20is%3Aissue%20label%3A%22SDR%22): Ingen aktuelle beslutninger 
 - [Link til architectural decision records](https://github.com/OS2sandbox/ai-heatcontrol/issues?q=is%3Aopen%20is%3Aissue%20label%3A%22ADR%22): Ingen aktuelle beslutninger
-- [Risikolog](https://github.com/OS2sandbox/ai-heatcontrol/blob/JakobNoerby-patch-23/projektadministration/risici/risikolog.md )
+- [Risikolog](https://github.com/OS2sandbox/ai-heatcontrol/blob/pm9/projektadministration/risici/risikolog.md)
 ---
 
 ## Mødereferat
